@@ -11,10 +11,6 @@
 @interface KRGPasscodeField : UITextField
 @end
 
-@interface KRGPasscodeBar ()
-
-@end
-
 @implementation KRGPasscodeBar
 @synthesize delegate = _passcodeBarDelegate;
 
@@ -24,37 +20,56 @@
     
     if ((self = [super initWithFrame:frame])) {
         
-        self.barStyle = UIBarStyleBlack;
-        self.translucent = YES;
-        self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-        
-        unsigned i, c = 4;
-        NSMutableArray *buttonItems = [[NSMutableArray alloc] initWithCapacity:(c + 2)];
-        
-        [buttonItems addObject:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:NULL]];
-        
-        for (i = 0; i < c; i++) {
-            UITextField *textField = [[KRGPasscodeField alloc] initWithFrame:CGRectMake(0.0, 0.0, 50.0, 50.0)];
-            textField.borderStyle = UITextBorderStyleRoundedRect;
-            textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
-            textField.spellCheckingType = UITextSpellCheckingTypeNo;
-            textField.keyboardType = UIKeyboardTypeNumberPad;
-            textField.enablesReturnKeyAutomatically = NO;
-            textField.keyboardAppearance = UIKeyboardAppearanceAlert;
-            textField.secureTextEntry = YES;
-            textField.textAlignment = UITextAlignmentCenter;
-            textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-            [textField addTarget:self action:@selector(textChanged:) forControlEvents:UIControlEventEditingChanged];
-            UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:textField];
-            [buttonItems addObject:item];
-        }
-        
-        [buttonItems addObject:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:NULL]];
-        
-        self.items = buttonItems;
+        [self commonInit];
     }
     
     return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    if ((self = [super initWithCoder:aDecoder])) {
+        
+        CGRect frame = self.frame;
+        frame.size.height = KRGPasscodeBarHeight;
+        self.frame = frame;
+        
+        [self commonInit];
+    }
+    
+    return self;
+}
+
+- (void)commonInit
+{
+    self.barStyle = UIBarStyleBlack;
+    self.translucent = YES;
+    self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    
+    unsigned i, c = 4;
+    NSMutableArray *buttonItems = [[NSMutableArray alloc] initWithCapacity:(c + 2)];
+    
+    [buttonItems addObject:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:NULL]];
+    
+    for (i = 0; i < c; i++) {
+        UITextField *textField = [[KRGPasscodeField alloc] initWithFrame:CGRectMake(0.0, 0.0, 50.0, 50.0)];
+        textField.borderStyle = UITextBorderStyleRoundedRect;
+        textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+        textField.spellCheckingType = UITextSpellCheckingTypeNo;
+        textField.keyboardType = UIKeyboardTypeNumberPad;
+        textField.enablesReturnKeyAutomatically = NO;
+        textField.keyboardAppearance = UIKeyboardAppearanceAlert;
+        textField.secureTextEntry = YES;
+        textField.textAlignment = UITextAlignmentCenter;
+        textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+        [textField addTarget:self action:@selector(textChanged:) forControlEvents:UIControlEventEditingChanged];
+        UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:textField];
+        [buttonItems addObject:item];
+    }
+    
+    [buttonItems addObject:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:NULL]];
+    
+    self.items = buttonItems;
 }
 
 - (BOOL)canBecomeFirstResponder
