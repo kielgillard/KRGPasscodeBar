@@ -18,6 +18,8 @@
 		9E8B691815EAF5D80003E720 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E8B68FF15EAF5D80003E720 /* Foundation.framework */; };
 		9E8B692015EAF5D80003E720 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9E8B691E15EAF5D80003E720 /* InfoPlist.strings */; };
 		9E8B692315EAF5D80003E720 /* PasscodesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E8B692215EAF5D80003E720 /* PasscodesTests.m */; };
+		9E8B692E15EAF6160003E720 /* KRGPasscodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E8B692D15EAF6160003E720 /* KRGPasscodeViewController.m */; };
+		9EAF883215EB0BD500451C95 /* KRGPasscodeBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAF883115EB0BD500451C95 /* KRGPasscodeBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,10 @@
 		9E8B691F15EAF5D80003E720 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9E8B692115EAF5D80003E720 /* PasscodesTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasscodesTests.h; sourceTree = "<group>"; };
 		9E8B692215EAF5D80003E720 /* PasscodesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasscodesTests.m; sourceTree = "<group>"; };
+		9E8B692C15EAF6160003E720 /* KRGPasscodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRGPasscodeViewController.h; sourceTree = "<group>"; };
+		9E8B692D15EAF6160003E720 /* KRGPasscodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRGPasscodeViewController.m; sourceTree = "<group>"; };
+		9EAF883015EB0BD500451C95 /* KRGPasscodeBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRGPasscodeBar.h; sourceTree = "<group>"; };
+		9EAF883115EB0BD500451C95 /* KRGPasscodeBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRGPasscodeBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +114,10 @@
 			children = (
 				9E8B690C15EAF5D80003E720 /* KRGAppDelegate.h */,
 				9E8B690D15EAF5D80003E720 /* KRGAppDelegate.m */,
+				9E8B692C15EAF6160003E720 /* KRGPasscodeViewController.h */,
+				9E8B692D15EAF6160003E720 /* KRGPasscodeViewController.m */,
+				9EAF883015EB0BD500451C95 /* KRGPasscodeBar.h */,
+				9EAF883115EB0BD500451C95 /* KRGPasscodeBar.m */,
 				9E8B690415EAF5D80003E720 /* Supporting Files */,
 			);
 			path = Passcodes;
@@ -252,6 +262,8 @@
 			files = (
 				9E8B690A15EAF5D80003E720 /* main.m in Sources */,
 				9E8B690E15EAF5D80003E720 /* KRGAppDelegate.m in Sources */,
+				9E8B692E15EAF6160003E720 /* KRGPasscodeViewController.m in Sources */,
+				9EAF883215EB0BD500451C95 /* KRGPasscodeBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +429,7 @@
 				9E8B692815EAF5D80003E720 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9E8B692915EAF5D80003E720 /* Build configuration list for PBXNativeTarget "PasscodesTests" */ = {
 			isa = XCConfigurationList;
@@ -425,6 +438,7 @@
 				9E8B692B15EAF5D80003E720 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,15 +7,22 @@
 //
 
 #import "KRGAppDelegate.h"
+#import "KRGPasscodeViewController.h"
 
 @implementation KRGAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+    UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window = window;
+    
+    KRGPasscodeViewController *passcodeViewController = [[KRGPasscodeViewController alloc] init];
+    
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:passcodeViewController];
+    window.rootViewController = navigationController;
+    
+    [window makeKeyAndVisible];
+    
     return YES;
 }
 
